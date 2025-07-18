@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Swipe Up Birthday Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      background: linear-gradient(-45deg, #a4d9f6, #f9afc1, #ffd6a5, #caffbf);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      color: #fff;
+      padding: 20px;
+    }
+
+    .section h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      animation: fadeInUp 1.2s ease;
+    }
+
+    .section p {
+      font-size: 1.2rem;
+      max-width: 500px;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.2rem;
+      color: #fff;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .bubbles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .bubble {
+      position: absolute;
+      bottom: -100px;
+      width: 40px;
+      height: 40px;
+      background: rgba(242, 221, 221, 0.2);
+      border-radius: 50%;
+      animation: floatUp 10s infinite ease-in;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-110vh) scale(0.5);
+        opacity: 0;
+      }
+    }
+    </style>
+    <style>
+  .btn-link {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 28px;
+    font-size: 1.1em;
+    color: rgb(255, 252, 252);
+    background: linear-gradient(45deg, #b6bbe1, #ead8bf);
+    text-decoration: none;
+    border-radius: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+
+  .btn-link:hover {
+    transform: scale(1.05);
+  }
+</style>
+
+  
+</head>
+<body>
+
+  <div class="section">
+    <h1>🎈 Swipe Up for a Birthday Surprise 🎁</h1>
+    <p>Celebrate with us and open your heart to joy and warm wishes. Scroll up to reveal a special card crafted just for you!</p>
+    <div class="scroll-indicator">⬆️ Scroll Up</div>
+  </div>
+
+  
+
+  <div class="bubbles">
+    <!-- JavaScript adds bubbles here -->
+  </div>
+
+  <script>
+    // Create animated bubbles
+    for (let i = 0; i < 30; i++) {
+      const bubble = document.createElement('div');
+      bubble.classList.add('bubble');
+      bubble.style.left = Math.random() * 100 + 'vw';
+      bubble.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      bubble.style.width = bubble.style.height = (Math.random() * 30 + 10) + 'px';
+      document.querySelector('.bubbles').appendChild(bubble);
+    }
+  </script>
+
+<section id="card" class="section">
+  <h1>Swipe Up to Reveal</h1>
+  <p>Your birthday surprise is just a tap away!</p>
+  <a href="wishcard.html" class="btn-link">🎁 Open Birthday Card</a>
+</section>
+
+</body>
+</html>
